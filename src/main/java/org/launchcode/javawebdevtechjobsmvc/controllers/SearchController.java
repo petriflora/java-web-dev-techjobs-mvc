@@ -23,6 +23,17 @@ public class SearchController {
         return "search";
     }
 
-    // TODO #3 - Create a handler to process a search request and render the updated search view.
+    // TADA #3 - Create a handler to process a search request and render the updated search view.
+    @PostMapping(value = "results")
+    public String displaySearchResults(Model model, String searchType, String searchTerm) {
+        ArrayList<Job> jobs = new ArrayList<>();
+        if (searchTerm.equals("") || searchTerm.toLowerCase().equals("all")){
+            jobs = JobData.findAll();
+        }
+        else jobs = JobData.findByColumnAndValue(searchType, searchTerm);
 
+        model.addAttribute("jobs", jobs);
+        model.addAttribute("columns", columnChoices);
+        return "search";
+    }
 }
