@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import org.launchcode.javawebdevtechjobsmvc.models.JobData;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -20,6 +22,7 @@ public class ListController {
 
     static HashMap<String, String> columnChoices = new HashMap<>();
     static HashMap<String, Object> tableChoices = new HashMap<>();
+    static ArrayList<String> viewAll = new ArrayList<>(Arrays.asList("View All"));
 
     public ListController () {
         columnChoices.put("all", "All");
@@ -28,6 +31,7 @@ public class ListController {
         columnChoices.put("positionType", "Position Type");
         columnChoices.put("coreCompetency", "Skill");
 
+        tableChoices.put("all", viewAll);
         tableChoices.put("employer", JobData.getAllEmployers());
         tableChoices.put("location", JobData.getAllLocations());
         tableChoices.put("positionType", JobData.getAllPositionTypes());
