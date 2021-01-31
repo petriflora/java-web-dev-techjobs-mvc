@@ -46,16 +46,20 @@
             <td>Job Name</td><td th:text="${job.getName()}"></td>
         </tr>
         <tr>
-            <td>Employer</td><td th:text="${job.getEmployer()}"></td>
+            <td>Employer</td><td><a th:href="@{/search/results(searchType=employer,searchTerm=${job.getEmployer()})}"
+                                    th:text="${job.getEmployer()}"></a></td>
         </tr>
         <tr>
-            <td>Location</td><td th:text="${job.getLocation()}"></td>
+            <td>Location</td><td><a th:href="@{/search/results(searchType=location,searchTerm=${job.getLocation()})}"
+                                    th:text="${job.getLocation()}"></a></td>
         </tr>
         <tr>
-            <td>Position Type</td><td th:text="${job.getPositionType()}"></td>
+            <td>Position Type</td><td><a th:href="@{/search/results(searchType=positionType,searchTerm=${job.getPositionType()})}"
+                                         th:text="${job.getPositionType()}"></a></td>
         </tr>
         <tr>
-            <td>Core Competency</td><td th:text="${job.getCoreCompetency()}"></td>
+            <td>Core Competency</td><td><a th:href="@{/search/results(searchType=coreCompetency,searchTerm=${job.getCoreCompetency()})}"
+                                               th:text="${job.getCoreCompetency()}"></a></td>
         </tr>
     </table>
 

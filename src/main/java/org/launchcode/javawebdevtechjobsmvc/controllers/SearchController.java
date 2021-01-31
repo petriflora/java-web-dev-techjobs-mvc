@@ -15,7 +15,7 @@ import static org.launchcode.javawebdevtechjobsmvc.controllers.ListController.co
  */
 @Controller
 @RequestMapping("search")
-public class SearchController {
+public class SearchController extends TechJobsController{
 
     @RequestMapping(value = "")
     public String search(Model model) {
@@ -25,7 +25,7 @@ public class SearchController {
     }
 
     // TADA #3 - Create a handler to process a search request and render the updated search view.
-    @PostMapping(value = "results")
+    @RequestMapping(value = "results")
     public String displaySearchResults(Model model, String searchType, String searchTerm) {
         ArrayList<Job> jobs = new ArrayList<>();
         if (searchTerm.equals("") || searchTerm.toLowerCase().equals("all")){
