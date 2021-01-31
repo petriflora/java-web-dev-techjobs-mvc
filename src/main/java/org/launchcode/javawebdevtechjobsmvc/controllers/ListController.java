@@ -20,24 +20,6 @@ import java.util.HashMap;
 @RequestMapping(value = "list")
 public class ListController extends TechJobsController{
 
-    static HashMap<String, String> columnChoices = new HashMap<>();
-    static HashMap<String, Object> tableChoices = new HashMap<>();
-    static ArrayList<String> viewAll = new ArrayList<>(Arrays.asList("View All"));
-
-    public ListController () {
-        columnChoices.put("all", "All");
-        columnChoices.put("employer", "Employer");
-        columnChoices.put("location", "Location");
-        columnChoices.put("positionType", "Position Type");
-        columnChoices.put("coreCompetency", "Skill");
-
-        tableChoices.put("all", viewAll);
-        tableChoices.put("employer", JobData.getAllEmployers());
-        tableChoices.put("location", JobData.getAllLocations());
-        tableChoices.put("positionType", JobData.getAllPositionTypes());
-        tableChoices.put("coreCompetency", JobData.getAllCoreCompetency());
-    }
-
     @RequestMapping(value = "")
     public String list(Model model) {
         model.addAttribute("columns", columnChoices);
