@@ -12,7 +12,6 @@ public class TechJobsController {
     static HashMap<String, String> actionChoices = new HashMap<>();
     static HashMap<String, String> columnChoices = new HashMap<>();
     static HashMap<String, Object> tableChoices = new HashMap<>();
-    static ArrayList<String> viewAll = new ArrayList<>(Arrays.asList("View All"));
 
     public TechJobsController() {
         actionChoices.put("search", "Search");
@@ -24,7 +23,7 @@ public class TechJobsController {
         columnChoices.put("positionType", "Position Type");
         columnChoices.put("coreCompetency", "Skill");
 
-        tableChoices.put("all", viewAll);
+        tableChoices.put("all", "View All");
         tableChoices.put("employer", JobData.getAllEmployers());
         tableChoices.put("location", JobData.getAllLocations());
         tableChoices.put("positionType", JobData.getAllPositionTypes());
